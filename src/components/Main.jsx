@@ -1,38 +1,19 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons"
+import { artistArray } from "../assets/database/artists";
+import { songsArray } from "../assets/database/songs";
+import ItemList from "./ItemList";
 
 const Main = () => {
     return (
         <div className="main">
-            <div className="item-list">
-                <div className="item-list__header">
-                    <h2>Artistas Populares</h2>
+            <ItemList 
+                title="Artistas" 
+                items={5} 
+                itemsArray={artistArray} 
+                path="/artists" 
+                idPath="/artist"
+            />
 
-                    <a href="/" className="item-list__link">
-                        Mostrar Tudo
-                    </a>
-                </div>
-
-                <div className="item-list__container">
-                    <div className="single-item">
-                        <div className="single-item__div-image-button">
-                            <div className="single-item__div-image">
-                                <img src="oi" alt="Artista X" className="single-item__image" />
-
-                                <FontAwesomeIcon className="single-item__icon" icon={faCirclePlay} />
-
-                                <div className="single-item__texts">
-                                    <div className="single-item__2lines">
-                                    <p className="single-item__title">Artista</p>
-
-                                    </div>
-                                    <p className="single-item__type">artista</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div>
+            <ItemList title="Musicas" items={10} itemsArray={songsArray} path="/songs" idPath="/song"/>
         </div>
     )
 }
