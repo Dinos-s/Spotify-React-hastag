@@ -1,5 +1,4 @@
 import Header from "./components/Header";
-import Main from "./components/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Artist from "./pages/Artist";
@@ -18,7 +17,6 @@ function App()  {
         <Route path="/artists" element={<Artists/>}/>
         <Route path="/song/:id" element={<Song/>}/>
         <Route path="/songs" element={<Songs/>}/>
-        <Main />
       </Routes>
     </BrowserRouter>
   );
