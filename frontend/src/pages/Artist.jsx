@@ -8,13 +8,13 @@ import { songsArray } from "../assets/database/songs";
 const Artist = () => {
     const {id} = useParams()
 
-    const {name, banner} = artistArray.filter((currentArtistObj) => currentArtistObj.id === Number(id))[0]
+    const {name, banner} = artistArray.filter((currentArtistObj) => currentArtistObj._id === id)[0]
 
     const songsArrayFromArtist = songsArray.filter((currentSongObj) => currentSongObj.artist === name)
 
     const randomIndex = Math.floor(Math.random() * (songsArrayFromArtist.length - 1))
 
-    const randomIdFormArtist = songsArrayFromArtist[randomIndex].id;
+    const randomIdFormArtist = songsArrayFromArtist[randomIndex]._id;
 
     return (
         <div className="artist">
